@@ -1,8 +1,10 @@
 package br.com.fiap.cp5.controller;
 
 
+import br.com.fiap.cp5.dto.UsuarioDto;
 import br.com.fiap.cp5.entity.UsuarioEntity;
 import br.com.fiap.cp5.repository.UsuarioRepository;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -28,9 +30,9 @@ public class UsuarioContoller {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity<UsuarioEntity> salvar(@RequestBody UsuarioEntity usuarioEntity){
-        usuarioEntity.setSenha(encoder.encode(usuarioEntity.getSenha()));
-        return ResponseEntity.ok(repository.save(usuarioEntity));
+    public ResponseEntity<UsuarioEntity> salvar(@RequestBody @Valid UsuarioDto dto){
+        dto.setSenha(encoder.encode(dto.getSenha()));
+        return ResponseEntity.ok(repository.save(dto));
     }
 
     @PutMapping("/atualizar/{id}")
