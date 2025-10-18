@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tranquilo JWT - Spring Security</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; }
+        main { flex: 1; padding: 40px; }
+        h1 { color: #ffffff; }
+        form { margin-bottom: 20px; }
+        input { padding: 8px; margin: 5px; }
+        button { padding: 10px 15px; background: #3498db; color: #fff; border: none; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        textarea { width: 100%; height: 100px; margin-top: 10px; }
+        #responseBox { margin-top: 15px; padding: 10px; border: 1px solid #ccc; white-space: pre-wrap; }
+        footer { background: #2c3e50; color: #ecf0f1; text-align: center; padding: 15px; font-size: 14px; margin-top: auto; }
+        footer a { color: #ecdbff; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Tranquilo JWT com Spring Security</h1>
+    <h1>________________________________________</h1>
+
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuário" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <h3>Token recebido:</h3>
+    <textarea id="token" readonly></textarea>
+
+    <button id="callProtected">Chamar endpoint protegido</button>
+
+    <div id="responseBox"></div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Tranquilo JWT | Desenvolvido para fins didáticos</p>
+    <p><a href="https://spring.io/projects/spring-security" target="_blank">Saiba mais sobre Spring Security</a></p>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

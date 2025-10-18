@@ -26,12 +26,18 @@ public class UsuarioEntity implements UserDetails {
 
     private String login;
     private String password;
-    private String role;
+    private UsuarioRoles role;
+
+    public UsuarioEntity(String login, String password, UsuarioRoles role){
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.role.equalsIgnoreCase(String.valueOf(UsuarioRoles.ADMIN))) return List.of(new SimpleGrantedAuthority("ROLE_AADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        if(this.role == UsuarioRoles.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_AADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
