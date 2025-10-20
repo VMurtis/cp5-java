@@ -17,7 +17,7 @@ import java.util.Date;
 public class JwtUtil {
 
     // chave secreta (configure em application.properties)
-    @Value("${app.jwt.secret:troque-por-um-segredo-bem-grande-e-aleatorio-de-pelo-menos-32-caracteres}")
+    @Value("${app.jwt.secret:7fG3kL9!xYpQ2rV8wT#sZd6mB0nC1vA5}")
     private String jwtSecret;
 
     // duração do token (1 hora padrão)

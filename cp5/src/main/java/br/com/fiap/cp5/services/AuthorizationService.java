@@ -1,5 +1,6 @@
 package br.com.fiap.cp5.services;
 
+import br.com.fiap.cp5.entity.UsuarioEntity;
 import br.com.fiap.cp5.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,10 @@ public class AuthorizationService implements UserDetailsService {
     UsuarioRepository repository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return repository.findByLogin(username);
+        UsuarioEntity usuario = repository.findByLogin(username);
+        if(usuario == null) {
+            throw new UsernameNotFoundException("Usuário não encontrado: " + username);
+        }
+        return usuario;
     }
 }
