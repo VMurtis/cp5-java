@@ -135,7 +135,8 @@ POST /autenticacao/registrar → cadastra novo usuário
 1-Passos
 
   
-  git clone [<URL_DO_REPOSITORIO>](https://github.com/VMurtis/cp5-java.git)
+  git clone https://github.com/VMurtis/cp5-java
+  
   cd cp5
 
 ---
