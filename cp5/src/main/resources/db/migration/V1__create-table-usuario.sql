@@ -7,5 +7,5 @@ CREATE TABLE usuario (
 
 INSERT INTO usuario (login, password, role)
 VALUES
-('tranquiloAdmin', '123456', 'ADMIN'),
+('tranquiloAdmin', '$2a$10$Dow1M8U0KoaZf1B9ouU5U.nJx1FQxg4w5ZcCe1rU2z/d7OQ/Gq1qi', 'ADMIN'),
 ('tranquiloUser',  '$2a$10$Dow1M8U0KoaZf1B9ouU5U.nJx1FQxg4w5ZcCe1rU2z/d7OQ/Gq1qi', 'USUARIO');
