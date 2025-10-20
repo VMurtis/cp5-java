@@ -50,9 +50,9 @@ public class SecurityConfig {
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
-                // registra o provider definido no UserConfig
+
                 .authenticationProvider(authenticationProvider)
-                // registra o filtro JWT
+
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         http.headers(headers -> headers.frameOptions(frame -> frame.disable()));

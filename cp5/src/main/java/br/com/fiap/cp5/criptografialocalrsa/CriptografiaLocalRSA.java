@@ -20,7 +20,7 @@ public class CriptografiaLocalRSA {
         byte[] messageToBytes = mensagem.getBytes();
         Cipher cifrador = Cipher.getInstance("RSA/ECB/PKCS1Padding");
 
-        // Cifrar mensagem
+
         cifrador.init(Cipher.ENCRYPT_MODE, publicKey);
         byte[] bytesCripto = cifrador.doFinal(messageToBytes);
 
@@ -30,19 +30,19 @@ public class CriptografiaLocalRSA {
     public static String
     decifrar(String mensagem, PrivateKey privateKey) throws Exception {
 
-        // Converte a mensagem cifrada para bytes
+
         byte[] bytesCifrados = Base64.getDecoder().decode(mensagem);
         Cipher cifrador = Cipher.getInstance("RSA/ECB/PKCS1Padding");
 
-        // Decriptografa os bytes
+
         cifrador.init(Cipher.DECRYPT_MODE, privateKey);
         byte[] mensagemDecifrada = cifrador.doFinal(bytesCifrados);
 
-        // Converte os bytes da mensagem decifrada para uma string
+
         return new String(mensagemDecifrada, "UTF8");
     }
 
-    // Converte os bytes de uma chave pública enviado pelo socket de volta para a chave
+
     public static PublicKey bytesParaChave(byte[] bytesChave) throws Exception {
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(bytesChave);
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");

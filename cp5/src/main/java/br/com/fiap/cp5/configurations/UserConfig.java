@@ -19,21 +19,7 @@ public class UserConfig {
         return new BCryptPasswordEncoder();
     }
 
-    /*@Bean
-    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
-        UserDetails admin = User.withUsername("admin")
-                .password(encoder.encode("123456"))
-                .roles("ADMIN","TRANQUILO")
-                //.roles("TRANQUILO")
-                .build();
 
-        UserDetails user = User.withUsername("user")
-                .password(encoder.encode("123456"))
-                .roles("USUARIO")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, user);
-    }*/
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider(
